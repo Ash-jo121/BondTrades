@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/BondTrades.Api/BondTrades.Api.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/BondTrades.IntegrationTests/BondTrades.IntegrationTests.csproj" />
+    <Project Path="tests/BondTrades.UnitTests/BondTrades.UnitTests.csproj" />
+  </Folder>
+</Solution>
