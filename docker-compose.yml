@@ -1,0 +1,15 @@
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    platform: linux/amd64
+    restart: no
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD}
+    volumes:
+      - mssql_data:/var/opt/mssql
+    ports:
+      - "1433:1433"
+
+volumes:
+  mssql_data:
