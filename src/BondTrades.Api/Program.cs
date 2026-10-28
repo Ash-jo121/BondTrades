@@ -14,6 +14,8 @@ builder.Services.AddOpenApi();
 builder.Services.AddScoped<IBondRepository,EfBondRepository>();
 builder.Services.AddScoped<ITradeRepository,EfTradeRepository>();
 builder.Services.AddScoped<ITradeService,TradeService>();
+builder.Services.AddProblemDetails();
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseSqlServer(
@@ -24,6 +26,7 @@ builder.Services.Configure<TradingLimits>(
 builder.Services.AddSingleton(TimeProvider.System);
 var app = builder.Build();
 
+app.UseExceptionHandler();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
